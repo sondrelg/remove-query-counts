@@ -29,7 +29,7 @@ repos:
         files: ^(CHANGELOG.rst|README.rst)$
         language: python
         additional_dependencies: [pygments, restructuredtext_lint]
-  - repo: git://github.com/sondrelg/remove-query-counts
-    rev: v0.1.0
+  - repo: https://github.com/sondrelg/remove-query-counts
+    rev: ''
     hooks:
       - id: remove-query-counts
