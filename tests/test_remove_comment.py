@@ -1,3 +1,3 @@
-@db_helper(count=1)  # this is a comment asdasd
+@db_helper()
 def example():
     print('test')

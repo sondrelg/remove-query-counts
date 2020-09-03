@@ -23,13 +23,11 @@ def _fix_file(filename: str) -> bool:
 
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
-    print(argv)
     parser = argparse.ArgumentParser()
     parser.add_argument('filenames', nargs='*', help='Filenames to run')
     args = parser.parse_args(argv)
     return_code = 0
     for filename in args.filenames:
-        print(filename)
         _, extension = os.path.splitext(filename.lower())
         if _fix_file(filename):
             print(f'Fixing {filename}')  # noqa: T001
