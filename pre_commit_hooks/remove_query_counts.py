@@ -4,12 +4,21 @@ from typing import Optional, Sequence
 
 
 def _process_line(line: bytes) -> bytes:
-    if line.startswith(b'@db_helper()  #'):
-        return b'@db_helper()\n'
+    """
+    Replaces the @db_helper-appended comment with a cleaned version of itself.
+    """
+    if line.strip().startswith(b'@db_helper  # function ran '):
+        if line.strip() != line:
+            whitespace = line[:line.find(b'@db_helper')]
+            return whitespace + b'@db_helper\r\n'
+        return b'@db_helper\r\n'
     return line
 
 
 def _fix_file(filename: str) -> bool:
+    """
+    Iterates through a files lines and cleans any comments.
+    """
     with open(filename, mode='rb') as file_processed:
         lines = file_processed.readlines()
     newlines = [_process_line(line) for line in lines]
