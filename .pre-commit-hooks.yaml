@@ -3,5 +3,5 @@
     description: Removes any query count comments, before commiting them to version control.
     entry: remove_query_counts
     language: python
-    types: [py]
+    types: [python]
     stages: [commit]
