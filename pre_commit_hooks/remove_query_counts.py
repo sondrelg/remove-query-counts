@@ -13,9 +13,6 @@ def _process_line(line: bytes) -> bytes:
     if _comment_pattern.match(line):
         starting_index = line.find(b'@db_helper(')
         possible_whitespace = line[:starting_index]
-        print(line)
-        print(starting_index)
-        print(b'-' + possible_whitespace + b'-')
         possible_args_or_kwargs = line[line.find(b'(') + 1: line.find(b')')]
         return possible_whitespace + b'@db_helper(' + possible_args_or_kwargs + b')\r\n'
     return line
