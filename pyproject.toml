@@ -18,7 +18,7 @@ packages = [
 ]
 
 [tool.poetry.scripts]
-remove_query_counts = 'pre_commit_hooks.remove_query_counts:main'
+remove_query_counts_script = 'pre_commit_hooks.remove_query_counts:main'
 
 [tool.poetry.dependencies]
 python = "^3.6.1"
