@@ -7,10 +7,10 @@ def _process_line(line: bytes) -> bytes:
     """
     Replaces the @db_helper-appended comment with a cleaned version of itself.
     """
-    if line.strip().startswith(b'@db_helper  # function ran '):
+    if line.strip().startswith(b'@db_helper()  # function ran '):
         if line.strip() != line:
             whitespace = line[:line.find(b'@db_helper')]
-            return whitespace + b'@db_helper\r\n'
+            return whitespace + b'@db_helper()\r\n'
         return b'@db_helper\r\n'
     return line
 
