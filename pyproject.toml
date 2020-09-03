@@ -13,6 +13,9 @@ classifiers = [
     'Programming Language :: Python :: Implementation :: CPython',
     'Programming Language :: Python :: Implementation :: PyPy',
 ]
+packages = [
+    { include = "remove_query_counts.py", from = "pre_commit_hooks" },
+]
 
 [tool.poetry.scripts]
 remove_query_counts = 'pre_commit_hooks.remove_query_counts:main'
