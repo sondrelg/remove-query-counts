@@ -1,0 +1,12 @@
+[flake8]
+ignore=
+    TYP201
+
+exclude =
+    .git,
+    .idea,
+    __pycache__,
+    .venv,
+
+
+max-complexity = 15
